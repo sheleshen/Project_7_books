@@ -101,7 +101,7 @@ p {
     line-height: 140%;
 
     text-align: center;
-    padding: 20px 40px 16px 40px;
+    padding: 18px 38px 17px 38px;
     cursor: pointer;
 }
 
@@ -120,8 +120,8 @@ p {
 }
 
 .btn:hover {
-    box-shadow: 0px 0px 0px var(--btn-pr-sh);
-    transition: all 100ms linear;
+    background-color: var(--btn-pr-bgh);
+    transition: all 200ms linear;
 }
 
 .btn:active {
@@ -200,6 +200,9 @@ h2 {
     line-height: 120%;
     color: var(--text-black);
     text-align: center;
+
+    padding-top: 80px;
+    padding-bottom: 50px;
 }
 
 @media (max-width: 600px) {
@@ -253,4 +256,24 @@ h2 {
 .cntr-alignment {
     margin: 0px auto;
     display: block
+}
+
+/*  */
+
+.bg-grey {
+    background-color: var(--bg-light);
+}
+
+.text-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    padding: 80px 0px;
+}
+
+.text-description {
+    text-align: right;
+    font-size: 20px;
+    color: var(--text-grey);
 }
