@@ -1,0 +1,256 @@
+/* Общие */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root {
+    /* MAIN */
+    --main-grey: #F2F2F2;
+    --main-blue:#3F7C9E;
+    --main-blue-dark:#082036;
+    --main-blue-light: #B5CDE3;
+    --main-pink-light: #E3B5B5;
+    --main-pink: #EB9898;
+
+    /* BG */
+    --bg-white: #ffffff;
+    --bg-light: #F2F2F2;
+
+
+    /* STROKE */
+    --str-grey: #F2F2F2;
+
+    /* ТЕКСТ */
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --text-blue: #3F7C9E;
+    --text-grey: #A8A8A8;
+
+    /* GAPы */
+    --gap8: 8px;
+    --gap12: 12px;
+    --gap16: 16px;
+    --gap24: 24px;
+    --gap32: 32px;
+
+    /*  BTN */
+    /* Primary */
+    --btn-pr-bg: #082036;
+    --btn-pr-t: #ffffff;
+    --btn-pr-bgh: #3F7C9E;
+    --btn-pr-th: #ffffff;
+    --btn-pr-bgcl: #285873;
+    --btn-pr-tcl: #ffffff;
+
+    /* Primary */
+    --btn-sec-bg: #F2F2F2;
+    --btn-sec-t: #3F7C9E;
+    --btn-sec-bgh: #E3B5B5;
+    --btn-sec-th: #ffffff;
+    --btn-sec-bgcl: #EB9898;
+    --btn-sec-tcl: #ffffff;
+}
+
+
+/* ТЕКСТ И ССЫЛКИ */
+
+a, p, ul, li, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--text-black);
+}
+
+@media (max-width: 600px) {
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    p {
+        font-size: 17px;
+    }
+}
+
+
+/*  BTN КНОПКИ */
+
+.btn {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--btn-pr-bg);
+    border: none;
+    border-radius: 30px;
+    color: var(--btn-pr-t);
+    
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+
+    text-align: center;
+    padding: 20px 40px 16px 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .btn {
+        font-size: 16px;
+        padding: 17px 32px 14px 32px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .btn {
+        font-size: 17px;
+        padding: 18px 36px 14px 36px;
+    }
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 0px var(--btn-pr-sh);
+    transition: all 100ms linear;
+}
+
+.btn:active {
+    background-color: var(--btn-pr-bgcl);
+    color: var(--btn-pr-tcl);
+    transition: all 200ms linear;
+}
+
+
+/* РАЗМЕРЫ КНОПОК - normal по умолчанию */
+
+.large {
+    font-size: 20px;
+    padding: 20px 32px;
+}
+
+.normal {
+    font-size: 20px;
+    padding: 16px 32px;
+}
+
+.medium {
+    font-size: 16px;
+    padding: 14px 32px;
+}
+
+.small {
+    font-size: 14px;
+    padding: 12px 24px;
+}
+
+.extrasmall {
+    font-size: 14px;
+    padding: 8px 24px;
+}
+
+
+/* ЗАГОЛОВКИ */
+
+h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 120%;
+    color: var(--text-black);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    h1 {
+        font-size: 54px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    h1 {
+        font-size: 62px;
+    }
+}
+
+h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 120%;
+    color: var(--text-black);
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    h2 {
+        font-size: 40px;
+    }
+}
+
+
+/* CONTAINER */
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: calc(100% - 40px);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .container {
+        max-width: calc(100% - 40px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        max-width: calc(100% - 40px);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .container {
+        max-width: calc(100% - 20px);
+    }
+}
+
+
+/* ДРУГИЕ СВОЙСТВА */
+
+.cntr-alignment {
+    margin: 0px auto;
+    display: block
+}
