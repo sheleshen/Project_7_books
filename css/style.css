@@ -76,16 +76,28 @@ p {
 
 @media (max-width: 600px) {
     p {
-        font-size: 16px;
+        font-size: 14px;
+        text-align: center;
     }
 }
 
 @media (min-width: 600px) and (max-width: 768px) {
     p {
-        font-size: 17px;
+        font-size: 15px;
     }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    p {
+        font-size: 17px;
+    }
+}
 
 /*  BTN КНОПКИ */
 
@@ -108,14 +120,14 @@ p {
 @media (max-width: 600px) {
     .btn {
         font-size: 16px;
-        padding: 17px 32px 14px 32px;
+        padding: 12px 24px 13px 24px;
     }
 }
 
 @media (min-width: 600px) and (max-width: 768px) {
     .btn {
         font-size: 17px;
-        padding: 18px 36px 14px 36px;
+        padding: 15px 30px 14px 30px;
     }
 }
 
@@ -197,9 +209,24 @@ h1 {
     color: var(--text-black);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 200px) {
+    h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 320px) {
+    h1 {
+        font-size: 34px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
     h1 {
         font-size: 40px;
+        text-align: center;
     }
 }
 
@@ -233,7 +260,19 @@ h2 {
     padding-bottom: 50px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 200px) {
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 320px) {
+    h2 {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
     h2 {
         font-size: 30px;
     }
@@ -300,27 +339,105 @@ h2 {
     padding: 80px 0px;
 }
 
+@media (max-width: 600px) {
+    .text-list {
+        gap: 24px;
+        padding: 40px 0px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .text-list {
+        gap: 32px;
+        padding: 60px 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text-list {
+        gap: 36px;
+        padding: 70px 0px;
+    }
+}
+
 .text-description {
     text-align: right;
-    font-size: 20px;
     color: var(--text-grey);
+}
+
+@media (max-width: 600px) {
+    .text-description {
+        text-align: center;
+    }
 }
 
 .book-list {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 40px 0px;
+    gap: var(--gap24);
+}
 
+@media (max-width: 600px) {
+    .book-list {
+        flex-direction: column;
+    }
 }
 
 .book-item {
-    width: calc(100% / 4);
+    width: calc((100% - var(--gap24)*3)/4);
 }
+
+@media (max-width: 600px) {
+    .book-item {
+        width: calc(100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .book-item {
+        width: calc((100% - var(--gap24)*1)/2);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .book-item {
+        width: calc((100% - var(--gap24)*2)/3);
+    }
+}
+
+.img-books {
+    object-fit: cover;
+}
+
+@media (max-width: 273px) {
+    .img-books {
+        width: 100%;
+    }
+}
+
 
 .date-text {
     font-size: 12px;
     color: var(--text-grey);
     padding-top: 20px;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .date-text {
+        padding-top: 10px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .date-text {
+        padding-top: 16px;
+    }
 }
 
 .book-title {
@@ -328,11 +445,31 @@ h2 {
     font-size: 24px;
     color: var(--text-black);
     padding-top: 10px;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .book-title {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .book-title {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .book-title {
+        font-size: 22px;
+    }
 }
 
 .author-list {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 6px;
     padding-top: 10px;
 }
@@ -350,5 +487,25 @@ h2 {
     padding-top: 30px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .button-list {
+        padding-top: 16px;
+        gap: 8px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .button-list {
+        padding-top: 22px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .button-list {
+        padding-top: 26px;
+    }
 }
