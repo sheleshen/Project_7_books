@@ -34,41 +34,21 @@
             <p class="text-description">
                 Общество мёртвых поэтов
             </p>
-            <button class="btn cntr-alignment">
-                К книгам
-            </button>
+            <a href="#catalog">
+                <button class="btn cntr-alignment" >
+                    К книгам
+                </button>
+            </a>
         </div>
     </section>
 
-    <section class="container">
-        <h2>
+    <section class="container" >
+        <h2 id="catalog">
             Книжная полка
         </h2>
-        <div class="book-list">
-            <div class="book-item">
-                <img class="img-books" src="/images/1.png" alt="">
-                <p class="date-text">
-                    2023
-                </p>
-                <p class="book-title">
-                    Планетариум
-                </p>
-                <div class="author-list">
-                    <p class="book-author">
-                        Уормелл
-                    </p>
-                </div>
-                <div class="button-list">
-                    <button class="btn small">
-                        Изменить
-                    </button>
-                    <button class="btn-sec small">
-                        Удалить
-                    </button>
-                </div>
-            </div>
-        </div>
+        <div class="book-list" id="bookList"></div>
     </section>
+
 
     <script src="/script.js"></script>
 
