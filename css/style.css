@@ -43,18 +43,40 @@
     /* Primary */
     --btn-pr-bg: #062644;
     --btn-pr-t: #ffffff;
+
     --btn-pr-bgh: #3F7C9E;
     --btn-pr-th: #ffffff;
+
     --btn-pr-bgcl: #285873;
     --btn-pr-tcl: #ffffff;
 
     /* Secondary */
-    --btn-sec-bg: #F2F2F2;
+    --btn-sec-bg: #ebeff1;
     --btn-sec-t: #3F7C9E;
+
     --btn-sec-bgh: #E3B5B5;
     --btn-sec-th: #ffffff;
+
     --btn-sec-bgcl: #EB9898;
     --btn-sec-tcl: #ffffff;
+
+    /* Add */
+    --btn-add-bg: #f2f2f200;
+    --btn-add-str: #062644;
+    --btn-add-t: #062644;
+
+    --btn-add-bgh: #3F7C9E;
+    --btn-add-strh: #3F7C9E;
+    --btn-add-th: #ffffff;
+
+    --btn-add-bgcl: #285873;
+    --btn-add-strcl: #285873;
+    --btn-add-tcl: #ffffff;
+
+    /* Form */
+    --form-bg: #ffffff;
+    --form-str: #d5e5ee;
+    --form-text: #919191;
 }
 
 
@@ -144,6 +166,36 @@ p {
     transition: all 200ms linear;
 }
 
+.btn-add {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--btn-add-bg);
+    border: solid 1px var(--btn-add-str);
+    border-radius: 30px;
+    color: var(--btn-add-t);
+    
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+
+    text-align: center;
+    padding: 18px 38px 17px 38px;
+    cursor: pointer;  
+}
+
+.btn-add:hover {
+    background-color: var(--btn-add-bgh);
+    border: solid 1px var(--btn-add-strh);
+    color: var(--btn-add-th);
+    transition: all 300ms linear;
+}
+
+.btn-add:active {
+    background-color: var(--btn-add-bgcl);
+    color: var(--btn-add-tcl);
+    border: solid 1px var(--btn-add-strcl);
+    transition: all 200ms linear;
+}
+
 .btn-sec {
     font-family: 'Ubuntu', sans-serif;
     background-color: var(--btn-sec-bg);
@@ -187,7 +239,7 @@ p {
 
 .medium {
     font-size: 16px;
-    padding: 13px 32px 15px 32px;
+    padding: 14px 32px 15px 32px;
 }
 
 .small {
@@ -355,28 +407,28 @@ img {
 .text-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
 
     padding: 80px 0px;
 }
 
 @media (max-width: 600px) {
     .text-list {
-        gap: 24px;
+        gap: 20px;
         padding: 40px 0px;
     }
 }
 
 @media (min-width: 600px) and (max-width: 768px) {
     .text-list {
-        gap: 32px;
+        gap: 24px;
         padding: 60px 0px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .text-list {
-        gap: 36px;
+        gap: 30px;
         padding: 70px 0px;
     }
 }
@@ -391,6 +443,43 @@ img {
         text-align: center;
     }
 }
+
+/* форма для новой книги */
+
+.title-form {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 60%;
+}
+
+input::placeholder {
+    color: var(--form-text);
+}
+
+.input-form {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: solid 2px var(--form-str);
+
+    font-size: 16px;
+    color: var(--form-text);
+    margin-bottom: 4px;
+}
+
+.input-form:focus {
+    outline: none;
+}
+
+
+/* Каталог книг */
 
 .book-list {
     display: flex;
