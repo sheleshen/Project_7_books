@@ -179,8 +179,22 @@ p {
     line-height: 140%;
 
     text-align: center;
-    padding: 18px 38px 17px 38px;
+    padding: 17px 38px 16px 38px;
     cursor: pointer;  
+}
+
+@media (max-width: 600px) {
+    .btn-add {
+        font-size: 16px;
+        padding: 11px 24px 13px 24px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .btn-add {
+        font-size: 17px;
+        padding: 14px 30px 13px 30px;
+    }
 }
 
 .btn-add:hover {
@@ -670,6 +684,7 @@ input::placeholder {
     .button-list {
         padding-top: 16px;
         gap: 8px;
+        justify-content: center;
     }
 }
 
