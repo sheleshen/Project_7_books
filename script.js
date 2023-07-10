@@ -1,3 +1,6 @@
+//Переменные
+
+//Массив данных
 const books = [
     {
         id: 1,
@@ -38,6 +41,7 @@ const books = [
 
 const bookList = document.getElementById('bookList')
 
+//рисуем новый массив
 function renderBooks() {
     bookList.innerHTML = ""
     books.forEach((book) => {
@@ -68,10 +72,55 @@ function renderBooks() {
     })
 }  
 
+//Очистить форму
+function clearForm() {
+    document.getElementById('bookName').value = ""
+    document.getElementById('bookAuthor').value = ""
+    document.getElementById('bookYear').value = ""
+    document.getElementById('bookImage').value = ""
+}
+
+//Открыть форму при клике
+function openForm() {
+    //показать форму при клике
+    const addbook = document.getElementById('addBook')
+    addbook.style.display = "flex" //показали форму
+}
+
+//Добавляем данные, очищаем форму
+function addBook() {
+    //скрыть форму при клике
+    const addBook = document.getElementById('addBook')
+    addBook.style.display = "none" //скрыли форму
+
+    //добавить книгу в список
+    // const idValue = 
+    const nameValue = document.getElementById('bookName').value
+    const authorValue = document.getElementById('bookAuthor').value
+    const yearValue = document.getElementById('bookYear').value
+    const imageValue = document.getElementById('bookImage').value
+
+    //данные новой книги, как добавить id или здесь не нужен?
+    const newBook = {
+        // id: idValue,
+        title: nameValue,
+        authors: authorValue,
+        year: yearValue,
+        image: imageValue
+    }
+
+    books.push(newBook)
+    renderBooks()
+    clearForm()
+
+    console.log(books)
+}
+
+//Удаление данных книги
 function deleteBook (id) {
     //найти книгу
-    const book = books.find((s) => {
-        return s.id === id
+    const book = books.find((n) => {
+        return n.id === id
     })
 
     //индекс книги в массиве
@@ -82,6 +131,7 @@ function deleteBook (id) {
 
     //показать новый список книг
     renderBooks()
+    console.log(books)
 }
 
 

@@ -77,6 +77,7 @@
     --form-bg: #ffffff;
     --form-str: #d5e5ee;
     --form-text: #919191;
+    --form-text-lead-in: #363636;
 }
 
 
@@ -457,7 +458,31 @@ img {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    width: 60%;
+    width: 40%;
+}
+
+@media (max-width: 600px) {
+    .add-book-form {
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .add-book-form {
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+    .add-book-form {
+        width: 60%;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1024px) {
+    .add-book-form {
+        width: 50%;
+    }
 }
 
 input::placeholder {
@@ -465,19 +490,18 @@ input::placeholder {
 }
 
 .input-form {
-    padding: 12px 20px;
+    padding: 15px 20px;
     border-radius: 30px;
     border: solid 2px var(--form-str);
 
     font-size: 16px;
-    color: var(--form-text);
+    color: var(--form-text-lead-in);
     margin-bottom: 4px;
 }
 
 .input-form:focus {
     outline: none;
 }
-
 
 /* Каталог книг */
 
@@ -558,12 +582,8 @@ input::placeholder {
 }
 
 .img-books {
-    object-fit: cover;
-    /* display: inline-block;
-    flex-shrink: 0; */
-    /* width: 100%; */
-    width: auto;
-    height: auto;
+    /* object-fit: cover; */
+    max-height: 300px;
 }
 
 @media (max-width: 273px) {

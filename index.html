@@ -39,14 +39,14 @@
                     К книгам
                 </button>
             </a>
-            <a href="">
-                <button class="btn-add cntr-alignment">
+            <a href="#addBook">
+                <button onclick="openForm()" class="btn-add cntr-alignment">
                     Добавить книгу
                 </button>
             </a>
 
             <!-- форма для добавления книги -->
-            <div class="add-book-form cntr-alignment">
+            <div id="addBook" class="add-book-form cntr-alignment" style="display: none;">
                 <p class="title-form">
                     Введите данные книги
                 </p>
@@ -54,7 +54,7 @@
                 <input id="bookAuthor" class="input-form" type="text" placeholder="Автор книги">
                 <input id="bookYear" class="input-form" type="text" placeholder="Год публикации">
                 <input id="bookImage" class="input-form" placeholder="Ссылка на обложку">
-                <button class="btn medium cntr-alignment">
+                <button onclick="addBook()" class="btn medium cntr-alignment">
                     Сохранить
                 </button>
             </div>
