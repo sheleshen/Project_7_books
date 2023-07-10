@@ -41,13 +41,22 @@ const books = [
 
 const bookList = document.getElementById('bookList')
 
+const btnAddBook = document.getElementById('btn-add-book')
+btnAddBook.addEventListener('click', openForm) 
+
+const btnSaveBook = document.getElementById('btn-save')
+btnSaveBook.addEventListener('click', addBook)
+
+
 //рисуем новый массив
 function renderBooks() {
     bookList.innerHTML = ""
     books.forEach((book) => {
         bookList.innerHTML += `
             <div class="book-item">
-                <img class="img-books" src="${book.image}" alt="Книга ${book.title}">
+                <div class="img-contaner">
+                    <img class="img-books" src="${book.image}" alt="Книга ${book.title}">
+                </div>
                 <p class="date-text">
                     ${book.year}
                 </p>
@@ -94,15 +103,13 @@ function addBook() {
     addBook.style.display = "none" //скрыли форму
 
     //добавить книгу в список
-    // const idValue = 
     const nameValue = document.getElementById('bookName').value
     const authorValue = document.getElementById('bookAuthor').value
     const yearValue = document.getElementById('bookYear').value
     const imageValue = document.getElementById('bookImage').value
 
-    //данные новой книги, как добавить id или здесь не нужен?
+    //данные новой книги
     const newBook = {
-        // id: idValue,
         title: nameValue,
         authors: authorValue,
         year: yearValue,
@@ -113,11 +120,11 @@ function addBook() {
     renderBooks()
     clearForm()
 
-    console.log(books)
+    // console.log(books)
 }
 
 //Удаление данных книги
-function deleteBook (id) {
+function deleteBook(id) {
     //найти книгу
     const book = books.find((n) => {
         return n.id === id
@@ -133,7 +140,6 @@ function deleteBook (id) {
     renderBooks()
     console.log(books)
 }
-
 
 //Вызываемые функции 
 renderBooks()

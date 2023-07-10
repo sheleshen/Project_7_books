@@ -25,7 +25,6 @@
 </head>
 <body>
 
-    <!-- здесь код -->
     <section class="bg-grey">
         <div class="container text-list">
             <h1>
@@ -40,7 +39,7 @@
                 </button>
             </a>
             <a href="#addBook">
-                <button onclick="openForm()" class="btn-add cntr-alignment">
+                <button id="btn-add-book" class="btn-add cntr-alignment">
                     Добавить книгу
                 </button>
             </a>
@@ -54,7 +53,7 @@
                 <input id="bookAuthor" class="input-form" type="text" placeholder="Автор книги">
                 <input id="bookYear" class="input-form" type="text" placeholder="Год публикации">
                 <input id="bookImage" class="input-form" placeholder="Ссылка на обложку">
-                <button onclick="addBook()" class="btn medium cntr-alignment">
+                <button id="btn-save" class="btn medium cntr-alignment">
                     Сохранить
                 </button>
             </div>

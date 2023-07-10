@@ -581,8 +581,12 @@ input::placeholder {
     }
 }
 
+.img-contaner {
+    overflow: hidden;
+}
+
 .img-books {
-    /* object-fit: cover; */
+    object-fit: contain;
     max-height: 300px;
 }
 
