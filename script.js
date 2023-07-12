@@ -42,32 +42,41 @@ let books = [
 
 const bookList = document.getElementById('bookList') //найти контейнер для выгрузки книг
 
-const btnAddBook = document.getElementById('btn-add-book') // Кнопка вызов формы "Добавить книгу"
-btnAddBook.addEventListener('click', openForm) 
+const ModalWindow = document.getElementById('modal-window')
 
-const btnSaveBook = document.getElementById('btn-save') // Кнопка "Сохранить книгу"
+const btnAddBook = document.getElementById('btn-open-modal-window') // Кнопка вызов формы "Добавить книгу"
+btnAddBook.addEventListener('click', openModalWindow) 
+
+const btnCloseModalWindow = document.getElementById('btn-close-modal-window') // Кнопка "Закрыть" мод.окно
+btnCloseModalWindow.addEventListener('click', closeModalWindow)
+
+const iconCloseModalWindow = document.getElementById('icon-close-modal-window') // Иконка "Закрыть" мод.окно
+iconCloseModalWindow.addEventListener('click', closeModalWindow)
+
+const btnSaveBook = document.getElementById('btn-save') // Кнопка "Сохранить книгу" мод.окно
 btnSaveBook.addEventListener('click', addBook)
 
-// функция для Local Storage
+
+
+// ФУНКЦИИ
+
+//Для Local Storage
 function saveToLocalStorage() {
     const booksJSON = JSON.stringify(books) //перевести в JSON
     localStorage.setItem("books", booksJSON) //данные в хранилище
 }
 
-//преобразовать JSON в JS ???
-const outBookJSON = localStorage.getItem('books')
-if (outBookJSON) {
-    books = JSON.parse(outBookJSON);
-}
-// const outBookJSON = localStorage.getItem('books')
-// const books = JSON.parse(outBookJSON);
-
 //Открыть форму при клике
-function openForm() {
-    //показать форму при клике
-    const addbook = document.getElementById('addBook')
-    addbook.style.display = "flex" //показали форму
-}  
+function openModalWindow() {
+    const addbook = document.getElementById('modal-window')
+    addbook.style.display = "flex"
+} 
+
+//Закрыть форму при клике
+function closeModalWindow() {  
+    const addBook = document.getElementById('modal-window')
+    addBook.style.display = "none"
+} 
 
 //Очистить форму
 function clearForm() {
@@ -79,8 +88,8 @@ function clearForm() {
 
 //Добавляем данные и очищаем форму
 function addBook() {
-    //скрыть форму при клике
-    const addBook = document.getElementById('addBook')
+    //скрыть форму при клике на кннопку "Сохранить"
+    const addBook = document.getElementById('modal-window')
     addBook.style.display = "none" //скрыли форму
 
     //добавить книгу в список
@@ -102,10 +111,10 @@ function addBook() {
     renderBooks()
     clearForm()
     saveToLocalStorage()
-    console.log(books)
+    // console.log(books)
 }
 
-//рисуем новый массив
+//Рисуем новый массив
 function renderBooks() {
     bookList.innerHTML = "" //в контейнере ничего нет
     books.forEach((book) => { //добавляем карточки книг в bookList
@@ -125,7 +134,7 @@ function renderBooks() {
                         ${book.authors}
                     </p>
                 </div>
-                <div class="button-list">
+                <div class="button-list button-list-indent">
                     <button class="btn small">
                         Изменить
                     </button>
@@ -157,6 +166,12 @@ function deleteBook(id) {
     renderBooks()
     saveToLocalStorage()
     console.log(books)
+}
+
+//преобразовать JSON в JS
+const outBookJSON = localStorage.getItem('books')
+if (outBookJSON) {
+    books = JSON.parse(outBookJSON);
 }
 
 //Вызываемые функции 

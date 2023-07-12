@@ -3,7 +3,7 @@
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    position: relative;
+    /* position: relative; */
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -461,23 +461,35 @@ img {
 
 /* форма для новой книги */
 
-.title-form {
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    padding-bottom: 12px;
+.modal-window {
+    background-color: #00000067;
+    position: fixed;  /* тогда есть скролл */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .add-book-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 28px;
     width: 40%;
+
+    background-color: var(--bg-white);
+    border-radius: 30px;
+    padding: 48px;
+
+    position: relative;
 }
 
 @media (max-width: 600px) {
     .add-book-form {
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -499,6 +511,46 @@ img {
     }
 }
 
+.icon-close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+
+    color: var(--text-grey);
+    cursor: pointer;
+}
+
+.title-form {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .title-form {
+        font-size: 24px;
+        padding-bottom: 8px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .title-form {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .title-form {
+        font-size: 29px;
+    }
+}
+
+.input-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 input::placeholder {
     color: var(--form-text);
 }
@@ -510,7 +562,26 @@ input::placeholder {
 
     font-size: 16px;
     color: var(--form-text-lead-in);
-    margin-bottom: 4px;
+}
+
+@media (max-width: 600px) {
+    .input-form {
+        padding: 13px 18px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .input-form {
+        padding: 13px 18px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .input-form {
+        padding: 13px 20px;
+    }
 }
 
 .input-form:focus {
@@ -673,7 +744,6 @@ input::placeholder {
 }
 
 .button-list {
-    padding-top: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -682,20 +752,31 @@ input::placeholder {
 
 @media (max-width: 600px) {
     .button-list {
-        padding-top: 16px;
         gap: 8px;
         justify-content: center;
     }
 }
 
+/* ОТСТУПЫ */
+
+.button-list-indent {
+    padding-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .button-list-indent {
+        padding-top: 16px;
+    }
+}
+
 @media (min-width: 600px) and (max-width: 768px) {
-    .button-list {
+    .button-list-indent {
         padding-top: 22px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .button-list {
+    .button-list-indent {
         padding-top: 26px;
     }
 }

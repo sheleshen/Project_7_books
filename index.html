@@ -40,26 +40,11 @@
                     </button>
                 </a>
                 <a href="#addBook">
-                    <button id="btn-add-book" class="btn-add">
+                    <button id="btn-open-modal-window" class="btn-add">
                         Добавить книгу
                     </button>
                 </a>
             </div>
-
-            <!-- форма для добавления книги -->
-            <div id="addBook" class="add-book-form cntr-alignment" style="display: none;">
-                <p class="title-form">
-                    Введите данные книги
-                </p>
-                <input id="bookName" class="input-form" type="text" placeholder="Название книги">
-                <input id="bookAuthor" class="input-form" type="text" placeholder="Автор книги">
-                <input id="bookYear" class="input-form" type="text" placeholder="Год публикации">
-                <input id="bookImage" class="input-form" placeholder="Ссылка на обложку">
-                <button id="btn-save" class="btn medium cntr-alignment">
-                    Сохранить
-                </button>
-            </div>
-
         </div>
     </section>
 
@@ -70,6 +55,29 @@
         <div class="book-list" id="bookList"></div>
     </section>
 
+    <!-- форма для добавления книги -->
+    <div id="modal-window" class="modal-window">    <!--  style="display: none;" -->
+        <div class="add-book-form cntr-alignment">  
+            <i id="icon-close-modal-window" class="fa-solid fa-xmark icon-close"></i>
+            <p class="title-form">
+                Введите данные книги
+            </p>
+            <div class="input-list">
+                <input id="bookName" class="input-form" type="text" placeholder="Название книги">
+                <input id="bookAuthor" class="input-form" type="text" placeholder="Автор книги">
+                <input id="bookYear" class="input-form" type="text" placeholder="Год публикации">
+                <input id="bookImage" class="input-form" placeholder="Ссылка на обложку">
+            </div>
+            <div class="button-list cntr-alignment">
+                <button id="btn-save" class="btn medium">
+                    Сохранить
+                </button>
+                <button id="btn-close-modal-window" class="btn-sec medium">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="/script.js"></script>
 
