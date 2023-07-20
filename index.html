@@ -57,7 +57,7 @@
 
     <!-- форма для добавления книги -->
     <div id="modal-window" class="modal-window">    <!--  style="display: none;" -->
-        <div class="add-book-form cntr-alignment">  
+        <div class="add-book-form cntr-alignment book-form-size">  
             <i id="icon-close-modal-window" class="fa-solid fa-xmark icon-close"></i>
             <p class="title-form">
                 Введите данные книги
@@ -74,6 +74,30 @@
                 </button>
                 <button id="btn-close-modal-window" class="btn-sec medium">
                     Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- форма для редактирования данных книги -->
+    <div id="modal-window-edit" class="modal-window-edit">
+        <div class="add-book-form-edit cntr-alignment book-form-size">  
+            <i id="icon-close-modal-window-edit" class="fa-solid fa-xmark icon-close"></i>
+            <p class="title-form">
+                Редактировать данные книги
+            </p>
+            <div class="input-list">
+                <input id="bookNameEdit" class="input-form" type="text" placeholder="Название книги">
+                <input id="bookAuthorEdit" class="input-form" type="text" placeholder="Автор книги">
+                <input id="bookYearEdit" class="input-form" type="text" placeholder="Год публикации">
+                <input id="bookImageEdit" class="input-form" placeholder="Ссылка на обложку">
+            </div>
+            <div class="button-list cntr-alignment">
+                <button id="btn-save-edit" class="btn medium">
+                    Сохранить
+                </button>
+                <button id="btn-close-modal-window-edit" class="btn-sec medium">
+                    Отменить
                 </button>
             </div>
         </div>

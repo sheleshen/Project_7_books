@@ -474,41 +474,44 @@ img {
     justify-content: center;
 }
 
+.book-form-size {
+    width: 40%;
+}
+
+@media (max-width: 600px) {
+    .book-form-size {
+        width: 90%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .book-form-size {
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+    .book-form-size {
+        width: 60%;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1024px) {
+    .book-form-size {
+        width: 50%;
+    }
+}
+
 .add-book-form {
     display: flex;
     flex-direction: column;
     gap: 28px;
-    width: 40%;
 
     background-color: var(--bg-white);
     border-radius: 30px;
     padding: 48px;
 
     position: relative;
-}
-
-@media (max-width: 600px) {
-    .add-book-form {
-        width: 90%;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 768px) {
-    .add-book-form {
-        width: 80%;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 960px) {
-    .add-book-form {
-        width: 60%;
-    }
-}
-
-@media (min-width: 960px) and (max-width: 1024px) {
-    .add-book-form {
-        width: 50%;
-    }
 }
 
 .icon-close {
@@ -586,6 +589,33 @@ input::placeholder {
 
 .input-form:focus {
     outline: none;
+}
+
+/* Форма для редактирования */
+
+.modal-window-edit {
+    background-color: #00000067;
+    position: fixed;  /* тогда есть скролл */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-book-form-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    background-color: var(--bg-white);
+    border-radius: 30px;
+    padding: 48px;
+
+    position: relative;
 }
 
 /* Каталог книг */

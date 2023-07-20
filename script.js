@@ -42,20 +42,26 @@ let books = [
 
 const bookList = document.getElementById('bookList') //найти контейнер для выгрузки книг
 
+// мод.окно "Добавить книгу"
 const ModalWindow = document.getElementById('modal-window')
 
 const btnAddBook = document.getElementById('btn-open-modal-window') // Кнопка вызов формы "Добавить книгу"
 btnAddBook.addEventListener('click', openModalWindow) 
 
-const btnCloseModalWindow = document.getElementById('btn-close-modal-window') // Кнопка "Закрыть" мод.окно
+const btnCloseModalWindow = document.getElementById('btn-close-modal-window') // Кнопка "Закрыть" мод.окно "Добавить книгу"
 btnCloseModalWindow.addEventListener('click', closeModalWindow)
 
-const iconCloseModalWindow = document.getElementById('icon-close-modal-window') // Иконка "Закрыть" мод.окно
+const iconCloseModalWindow = document.getElementById('icon-close-modal-window') // Иконка "Закрыть" мод.окно "Добавить книгу"
 iconCloseModalWindow.addEventListener('click', closeModalWindow)
 
-const btnSaveBook = document.getElementById('btn-save') // Кнопка "Сохранить книгу" мод.окно
+const btnSaveBook = document.getElementById('btn-save') // Кнопка "Сохранить книгу" мод.окно "Добавить книгу"
 btnSaveBook.addEventListener('click', addBook)
 
+// мод.окно "Редактировать книгу"
+const ModalWindowEdit = document.getElementById('modal-window-edit') // Найти элемент "Редактировать книгу"
+
+const btnEditBook = document.getElementById('btn-open-modal-window-edit') // Кнопка вызов формы "Редактировать книгу"
+btnEditBook.addEventListener('click', openModalWindowEdit) 
 
 
 // ФУНКЦИИ
@@ -68,15 +74,36 @@ function saveToLocalStorage() {
 
 //Открыть форму при клике
 function openModalWindow() {
-    const addbook = document.getElementById('modal-window')
-    addbook.style.display = "flex"
+    const editbook = document.getElementById('modal-window')
+    editbook.style.display = "flex"
 } 
+
+//Открыть форму редактирования при клике
+function openModalWindowEdit(id) {
+    const editbook = document.getElementById('modal-window-edit')
+    editbook.style.display = "flex"
+
+    //найти книгу по её id
+    const bookEdit = books.find((n) => {
+        return n.id === id 
+    })
+
+    // получить данные по id
+    getInfoBook(book);
+    
+}
 
 //Закрыть форму при клике
 function closeModalWindow() {  
     const addBook = document.getElementById('modal-window')
     addBook.style.display = "none"
-} 
+}
+
+//Закрыть форму редактирования при клике
+function closeModalWindowEdit() {  
+    const editBook = document.getElementById('modal-window-edit')
+    editBook.style.display = "none"
+}
 
 //Очистить форму
 function clearForm() {
@@ -114,6 +141,14 @@ function addBook() {
     // console.log(books)
 }
 
+// Получить данные редактируемой книги  
+function getInfoBook(book) {
+    document.getElementById('bookName').value = book.title
+    document.getElementById('bookAuthor').value = book.authors
+    document.getElementById('bookYear').value = book.year
+    document.getElementById('bookImage').value = book.image
+}
+
 //Рисуем новый массив
 function renderBooks() {
     bookList.innerHTML = "" //в контейнере ничего нет
@@ -135,7 +170,7 @@ function renderBooks() {
                     </p>
                 </div>
                 <div class="button-list button-list-indent">
-                    <button class="btn small">
+                    <button id="btn-open-modal-window-edit-${book.id}" class="btn small">
                         Изменить
                     </button>
                     <button class="btn-sec small" onclick='deleteBook(${book.id})'> <!-- id="btn-delete-book-${book.id}"  -->
