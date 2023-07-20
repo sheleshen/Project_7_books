@@ -57,20 +57,7 @@ iconCloseModalWindow.addEventListener('click', closeModalWindow)
 const btnSaveBook = document.getElementById('btn-save') // Кнопка "Сохранить книгу" мод.окно "Добавить книгу"
 btnSaveBook.addEventListener('click', addBook)
 
-// мод.окно "Редактировать книгу"
-const ModalWindowEdit = document.getElementById('modal-window-edit') // Найти элемент "Редактировать книгу"
-
-const btnEditBook = document.getElementById('btn-open-modal-window-edit') // Кнопка вызов формы "Редактировать книгу"
-btnEditBook.addEventListener('click', openModalWindowEdit) 
-
-
-// ФУНКЦИИ
-
-//Для Local Storage
-function saveToLocalStorage() {
-    const booksJSON = JSON.stringify(books) //перевести в JSON
-    localStorage.setItem("books", booksJSON) //данные в хранилище
-}
+// ФУНКЦИИ мод.окно "Добавить книгу"
 
 //Открыть форму при клике
 function openModalWindow() {
@@ -78,31 +65,10 @@ function openModalWindow() {
     editbook.style.display = "flex"
 } 
 
-//Открыть форму редактирования при клике
-function openModalWindowEdit(id) {
-    const editbook = document.getElementById('modal-window-edit')
-    editbook.style.display = "flex"
-
-    //найти книгу по её id
-    const bookEdit = books.find((n) => {
-        return n.id === id 
-    })
-
-    // получить данные по id
-    getInfoBook(book);
-    
-}
-
 //Закрыть форму при клике
 function closeModalWindow() {  
     const addBook = document.getElementById('modal-window')
     addBook.style.display = "none"
-}
-
-//Закрыть форму редактирования при клике
-function closeModalWindowEdit() {  
-    const editBook = document.getElementById('modal-window-edit')
-    editBook.style.display = "none"
 }
 
 //Очистить форму
@@ -141,6 +107,39 @@ function addBook() {
     // console.log(books)
 }
 
+
+
+// мод.окно "Редактировать книгу"
+const ModalWindowEdit = document.getElementById('modal-window-edit') // Найти элемент "Редактировать книгу"
+
+// const btnEditBook = document.getElementById('btn-open-modal-window-edit') // Кнопка вызов формы "Редактировать книгу"
+// btnEditBook.addEventListener('click', openModalWindowEdit) 
+
+
+
+// ФУНКЦИИ мод.окно "Изменить книгу"
+
+//Открыть форму редактирования при клике
+function openModalWindowEdit(id) {
+    const editbook = document.getElementById('modal-window-edit')
+    editbook.style.display = "flex"
+
+    //найти книгу по её id
+    const bookEdit = books.find((n) => {
+        return n.id === id 
+    })
+
+    // получить данные по id
+    getInfoBook(book);
+    
+}
+
+//Закрыть форму редактирования при клике
+function closeModalWindowEdit() {  
+    const editBook = document.getElementById('modal-window-edit')
+    editBook.style.display = "none"
+}
+
 // Получить данные редактируемой книги  
 function getInfoBook(book) {
     document.getElementById('bookName').value = book.title
@@ -148,6 +147,34 @@ function getInfoBook(book) {
     document.getElementById('bookYear').value = book.year
     document.getElementById('bookImage').value = book.image
 }
+
+
+// УДАЛЕНИЕ КНИГИ ТЕСТ
+
+// const btnDeleteBook  = document.getElementById('btn-delete-book-${book.id}')
+// btnDeleteBook.addEventListener('click', deleteBook)
+
+//Удаление данных книги ЧЕРЕЗ onclick
+function deleteBook(id) {
+    //найти книгу по её id
+    const bookDelete = books.find((n) => {
+        return n.id === id 
+    })
+
+    //индекс книги в массиве
+    const bookIndex = books.indexOf(bookDelete)
+
+    //удалить элемент из массива
+    books.splice(bookIndex, 1)
+
+    //показать новый список книг
+    renderBooks()
+    saveToLocalStorage()
+    console.log(books)
+}
+
+
+// ФУНКЦИИ ДЛЯ МАССИВА
 
 //Рисуем новый массив
 function renderBooks() {
@@ -184,23 +211,10 @@ function renderBooks() {
     saveToLocalStorage()
 }
 
-//Удаление данных книги
-function deleteBook(id) {
-    //найти книгу по её id
-    const bookDelete = books.find((n) => {
-        return n.id === id 
-    })
-
-    //индекс книги в массиве
-    const bookIndex = books.indexOf(bookDelete)
-
-    //удалить элемент из массива
-    books.splice(bookIndex, 1)
-
-    //показать новый список книг
-    renderBooks()
-    saveToLocalStorage()
-    console.log(books)
+//Для Local Storage
+function saveToLocalStorage() {
+    const booksJSON = JSON.stringify(books) //перевести в JSON
+    localStorage.setItem("books", booksJSON) //данные в хранилище
 }
 
 //преобразовать JSON в JS
@@ -212,7 +226,3 @@ if (outBookJSON) {
 //Вызываемые функции 
 renderBooks()
 saveToLocalStorage()
-
-
-// const btnDeleteBook  = document.getElementById('btn-delete-book-${book.id}')
-// btnDeleteBook.addEventListener('click', deleteBook)
