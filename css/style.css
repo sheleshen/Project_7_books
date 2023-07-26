@@ -78,6 +78,7 @@
     --form-str: #d5e5ee;
     --form-text: #919191;
     --form-text-lead-in: #363636;
+    --form-error: #d84e4e;;
 }
 
 
@@ -559,12 +560,17 @@ input::placeholder {
 }
 
 .input-form {
+    width: 100%;
     padding: 15px 20px;
     border-radius: 30px;
     border: solid 2px var(--form-str);
 
     font-size: 16px;
     color: var(--form-text-lead-in);
+}
+
+.input-error {
+    border: solid 2px var(--form-error);
 }
 
 @media (max-width: 600px) {

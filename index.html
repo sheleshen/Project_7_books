@@ -63,10 +63,18 @@
                 Введите данные книги
             </p>
             <div class="input-list">
-                <input id="bookName" class="input-form" type="text" placeholder="Название книги">
-                <input id="bookAuthor" class="input-form" type="text" placeholder="Автор книги">
-                <input id="bookYear" class="input-form" type="text" placeholder="Год публикации">
-                <input id="bookImage" class="input-form" placeholder="Ссылка на обложку">
+                <div id="bookNameError">
+                    <input id="bookName" class="input-form" type="text" placeholder="Название книги">
+                </div>
+                <div id="bookAuthorError">
+                    <input id="bookAuthor" class="input-form" type="text" placeholder="Автор книги">
+                </div>
+                <div id="bookYearError">
+                    <input id="bookYear" class="input-form" type="text" placeholder="Год публикации">
+                </div>
+                <div id="bookImageError">
+                    <input id="bookImage" class="input-form" placeholder="Ссылка на обложку">
+                </div>
             </div>
             <div class="button-list cntr-alignment">
                 <button id="btn-save" class="btn medium">
@@ -87,10 +95,18 @@
                 Редактировать данные книги
             </p>
             <div class="input-list">
-                <input id="bookNameEdit" class="input-form" type="text" placeholder="Название книги">
-                <input id="bookAuthorEdit" class="input-form" type="text" placeholder="Автор книги">
-                <input id="bookYearEdit" class="input-form" type="text" placeholder="Год публикации">
-                <input id="bookImageEdit" class="input-form" placeholder="Ссылка на обложку">
+                <div>
+                    <input id="bookNameEdit" class="input-form" type="text" placeholder="Название книги">
+                </div>
+                <div>
+                    <input id="bookAuthorEdit" class="input-form" type="text" placeholder="Автор книги">
+                </div>
+                <div>
+                    <input id="bookYearEdit" class="input-form" type="text" placeholder="Год публикации">
+                </div>
+                <div>
+                    <input id="bookImageEdit" class="input-form" placeholder="Ссылка на обложку">
+                </div>
             </div>
             <div class="button-list cntr-alignment">
                 <button id="btn-save-edit" class="btn medium">
